@@ -1,0 +1,26 @@
+<%- include('../../partials/header.ejs')%>
+
+<body>
+  <div class="page">
+    <%- include('../../partials/navbarAdmin.ejs')%>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Bem vindo ao cadastro de categoria</h2>
+          <hr>
+        </div>
+        <div class="card-body">
+          <form action="/admin/category/save" method="post" onsubmit="confirmCreate(event)">
+            <input class="form-control" type="text" name="title" placeholder="Definir categoria">
+            <div class="buttons">
+              <input class="btn btn-success" type="submit" value="Cadastrar">
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('../../partials/footer.ejs')%>

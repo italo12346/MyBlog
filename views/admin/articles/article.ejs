@@ -1,0 +1,47 @@
+<%- include('../../partials/header.ejs')%>
+
+<body>
+  <div class="page">
+    <%- include('../../partials/navbarAdmin.ejs')%>
+    <div class="container">
+      <h2 class="text-center">Artigos</h2>
+      <a href="/admin/article/new" class="btn btn-success">Criar novo Artigo</a>
+      <hr>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Slug</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% article.forEach((article)=>{%>
+            <tr>
+              <th><%-article.id%></th>
+              <th><%-article.title%></th>
+              <th><%-article.slug%></th>
+             
+              <th>
+                <a href="/admin/category/edit/<%-article.id %>">
+                  <img class="icons" src="/img/editdocument_105148.svg" alt="Editar">
+                </a>
+              <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmArticle(event)">
+                <input type="hidden" name="id" value="<%- article.id %>">
+
+                <button>
+                  <img class="icons" src="/img/delete_remove_bin_icon-icons.com_72400.svg" alt="Deletar">
+                </button>
+              </form>
+              </th>
+            </tr>
+          <%})%>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+<%- include('../../partials/footer.ejs')%>

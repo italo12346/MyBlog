@@ -25,11 +25,13 @@ button{
 .container{
     margin-top: 1vh;
 }
+
 .navbar{
     background-color: var(--cor-navbar);
-    padding-left: 0.8vw;
     text-decoration: none;
-   
+}
+.navbar-brand{
+    margin-left: 0.8vw;
 }
 .btn{
     margin-top: 0.5rem;

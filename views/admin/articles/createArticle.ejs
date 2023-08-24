@@ -1,0 +1,59 @@
+<%- include('../../partials/header.ejs')%>
+
+<body>
+  <div class="page">
+    <%- include('../../partials/navbar.ejs')%>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Bem vindo a criação de artigos</h2>
+          <hr>
+        </div>
+        <div class="card-body">
+          <form action="/admin/article/save" method="post" onsubmit="confirmAction(event)">
+            <input class="title form-control" type="text" name="title" placeholder="Definir Titulo">
+            <textarea class="form-control" name="body" id="article" cols="30" rows="25" placeholder="Escreva seu artigo"></textarea>
+            <label>Categorias</label>
+            <select class="" name="category">
+              <%categories.forEach((categories)=>{%>
+                 <option value="<%-categories.id %>"><%-categories.title %></option>
+                  <%})%>
+            </select>
+            <div class="buttons">
+              <input class="btn btn-success" type="submit" value="Criar">
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('../../partials/footer.ejs')%>
+
+<!--Configurando TinyMce para nelhorar a textArea -->
+<script src="/tinymce/tinymce.min.js"></script>
+
+<script>
+  tinymce.init({
+    language: "pt_BR",
+    selector: "#article",
+    plugins: [
+      'advlist',
+      'autolink',
+      'link',
+      'image',
+      'lists',
+      'preview',
+      'searchreplace',
+      'wordcount',
+      'fullscreen',
+      'insertdatetime',
+      'media',
+      'save',
+      'table',
+      'emoticons',
+    ]
+  })
+</script>

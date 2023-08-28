@@ -30,7 +30,7 @@ connection
     })
 
 app.get("/", (req,res)=>{
-    res.send("ok")
+    res.render('index')
 })
 
 app.listen(port,() => console.log("servidor online"))

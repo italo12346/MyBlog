@@ -26,15 +26,18 @@ button{
     margin-top: 1vh;
 }
 
+.newBtn{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+}
 .navbar{
     background-color: var(--cor-navbar);
     text-decoration: none;
 }
 .navbar-brand{
     margin-left: 0.8vw;
-}
-.btn{
-    margin-top: 0.5rem;
 }
 
 .card-header{

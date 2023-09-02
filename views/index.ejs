@@ -14,9 +14,10 @@
         <h2><%-article.title %></h2>
       </div>
       <div class="card-body">
-        <%-article.body %>
-        <a href="#" class="btn btn-success"> Ler Artigo</a>
-        <p></p>
+        <strong>Resumo: </strong><%-article.summary %>
+      </div>
+      <div class="card-footer">
+        <a href="<%-article.slug%>" class="btn btn-success"> Ler Artigo</a>
       </div>
     </div>
     <%})%>

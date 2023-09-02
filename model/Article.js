@@ -9,6 +9,10 @@ const Article = connection.define('articles',{
         type: Sequelize.STRING,
         allowNull: false
     },
+    summary:{
+        type:Sequelize.TEXT,
+        allowNull: false
+    },
     body:{
         type:Sequelize.TEXT,
         allowNull: false

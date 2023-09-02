@@ -18,10 +18,12 @@ router.get('/admin/article/new',(req, res)=>{
 router.post('/admin/article/save',(req, res)=>{
     let title = req.body.title
     let body = req.body.body
+    let summary = req.body.summary
     let categoryId = req.body.category
     Article.create({
         title:title,
         slug: slugify(title),
+        summary:summary,
         body:body,
         categoryId:categoryId
     }).then(()=>{

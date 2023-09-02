@@ -38,4 +38,21 @@ app.get("/", (req,res)=>{
 
 })
 
+app.get("/:slug", (req,res)=>{
+    let slug = req.params.slug
+    Article.findOne({
+        where:{
+            slug:slug
+        }
+    }).then(article =>{
+        if(!undefined){
+            res.render('admin/articles/pageArticle',{article:article})
+        }else{
+            res.redirect('/')
+        }
+    }).catch(err => {
+        res.redirect('/')
+    })
+})
+
 app.listen(port,() => console.log("servidor online"))

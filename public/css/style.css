@@ -30,12 +30,6 @@ button{
     margin-top: 1vh;
 }
 
-.newBtn{
-    display: flex;
-    justify-content: start;
-    position: relative;
-    width: 100%;
-}
 .navbar{
     background-color: var(--cor-navbar);
     text-decoration: none;
@@ -43,6 +37,8 @@ button{
 .navbar-brand{
     margin-left: 0.8vw;
 }
+/* Cards */
+
 .card{
     margin-bottom: 1vh;
 }
@@ -50,6 +46,24 @@ button{
     padding: 1vw;
     text-align: center;
 }
+
+/* Inputs, Buttons  */
+.title{
+    margin-bottom: 1vh;
+}
+
+.summary{
+    margin-bottom: 1vh;
+}
+
+.newBtn{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
 .buttons{
     display: flex;
     justify-content: space-between;
@@ -59,11 +73,3 @@ button{
     height: 2vh;
     cursor: pointer;
 }
-.title{
-    margin-bottom: 1vh;
-}
-
-.newBtn{
-    margin-bottom: 1vh;
-}
-

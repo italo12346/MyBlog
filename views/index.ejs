@@ -1,13 +1,25 @@
 <%- include('partials/header.ejs')%>
 
 <body>
-  <%- include('partials/navbarAdmin.ejs')%>
-  <div class="container text-center">
-    <h1>Olá bem vindo</h1>
+  <%- include('partials/navbarHome.ejs')%>
+  <div class="container">
+    <h1>Bem vindo ao MyBlog</h1>
     <hr>
     <div class="newBtn">
-      <a href="article/new" class="btn btn-success">+</a>
+      <a href="/admin/article/new" class="btn btn-success">+</a>
     </div>
+    <% article.forEach((article)=>{ %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%-article.title %></h2>
+      </div>
+      <div class="card-body">
+        <%-article.body %>
+        <a href="#" class="btn btn-success"> Ler Artigo</a>
+        <p></p>
+      </div>
+    </div>
+    <%})%>
   </div>
 
 </body>

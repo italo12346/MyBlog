@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
     --cor-navbar:#000059;
     --cor-hover: rgb(255, 0, 0);
@@ -15,7 +17,9 @@
     list-style: none;
     text-decoration: none;
     list-style: none;
+    font-family: 'Poppins';
 }
+
 button{
     border: none;
 }
@@ -39,14 +43,16 @@ button{
 .navbar-brand{
     margin-left: 0.8vw;
 }
-
+.card{
+    margin-bottom: 1vh;
+}
 .card-header{
     padding: 1vw;
     text-align: center;
 }
 .buttons{
     display: flex;
-    justify-content:flex-end;
+    justify-content: space-between;
     
 }
 .icons{
@@ -56,3 +62,8 @@ button{
 .title{
     margin-bottom: 1vh;
 }
+
+.newBtn{
+    margin-bottom: 1vh;
+}
+

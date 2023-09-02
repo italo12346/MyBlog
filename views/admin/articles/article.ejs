@@ -23,12 +23,13 @@
               <th><%-article.id%></th>
               <th><%-article.title%></th>
               <th><%-article.slug%></th>
+              <th><%-article.category.title%></th>
              
               <th>
-                <a href="/admin/category/edit/<%-article.id %>">
+                <a href="/admin/article/edit/<%-article.id %>">
                   <img class="icons" src="/img/editdocument_105148.svg" alt="Editar">
                 </a>
-              <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmArticle(event)">
+              <form method="POST" action="/admin/article/delete" style="display: inline;" onsubmit="confirmAction(event)">
                 <input type="hidden" name="id" value="<%- article.id %>">
 
                 <button>

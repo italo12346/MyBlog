@@ -2,6 +2,27 @@ const express = require("express")
 const router = express.Router()
 const slugify = require("slugify")
 const Category = require("../model/Category")
+const Article = require("../model/Article")
+
+router.get("/:slug",(req, res) => {
+    var slug = req.params.slug;
+    Category.findOne({
+        where: {
+            slug: slug
+        },
+        include: [{model: Article}]
+    }).then( category => {
+        if(category != undefined){
+            Category.findAll().then(categories => {
+                res.render("index",{article: category.articles,categories: categories});
+            });
+        }else{
+            res.redirect("/");
+        }
+    }).catch( err => {
+        res.redirect("/");
+    })
+})
 
 router.get('/admin/category/new', (req, res) => {
     res.render('admin/categories/createCategory')
@@ -10,15 +31,15 @@ router.get('/admin/category/new', (req, res) => {
 router.get('/admin/category/edit/:id', (req, res) => {
     let id = req.params.id
     console.log(id);
-    if(isNaN(id)){
+    if (isNaN(id)) {
         res.redirect('/admin/category')
     }
-    Category.findByPk(id).then(categories =>{
-        if(categories != undefined){
-            res.render('admin/categories/editCategory',{
-                categories:categories
+    Category.findByPk(id).then(categories => {
+        if (categories != undefined) {
+            res.render('admin/categories/editCategory', {
+                categories: categories
             })
-        }else{
+        } else {
             res.redirect('/admin/category')
         }
     })
@@ -50,15 +71,15 @@ router.post('/admin/category/save', (req, res) => {
 })
 // Update
 router.post('/admin/category/update', (req, res) => {
-   let id = req.body.id
-   let title = req.body.title
-   Category.update({title: title},{
-    where:{
-        id: id
-    }
-   }).then(()=>{
-    res.redirect('/admin/category/')
-   })
+    let id = req.body.id
+    let title = req.body.title
+    Category.update({ title: title }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.redirect('/admin/category/')
+    })
 })
 
 // Delete

@@ -1,41 +1,42 @@
-<%- include(" ../../partials/header.ejs") %>
-<%- include ("../../partials/navbar.ejs") %>
+<%- include('../../partials/header.ejs')%>
 
-<div class="container">
-    <hr>
-    <div class="card"> 
-        <div class="card-header">
-            <h2>Editar artigo</h2>
+<body>
+  <div class="page">
+    <%- include('../../partials/navbarAdmin.ejs')%>
+
+    <div class="container">
+        <div class="card"> 
+            <div class="card-header">
+                <h2>Editar artigo</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/admin/article/update">
+                    <input type="hidden" value="<%= article.id %>" name="id">
+                    <input class="form-control" type="text" name="title" placeholder="Defina o título do artigo" value="<%- article.title %>"><br>
+                    <input class="summary form-control" type="text" name="summary" minlength="3" maxlength="140" value="<%- article.summary %>" placeholder="Faça um breve resumo sobre o artigo">
+                    <textarea class="form-control" placeholder="Escreva o artigo aqui!" name="body" id="article"><%-article.body%></textarea><br>
+                    <label>Categoria</label>
+                    <select name="category" class="form-control">
+                        <% categories.forEach((category) => { %>
+                            <% if(category.id == article.categoryId) { %> 
+                                <option value="<%= category.id %>" selected><%= category.title %></option>
+                            <% } else { %>
+                                <option value="<%= category.id %>"><%= category.title %></option>
+                            <% } %>   
+                        <% }) %>
+                    </select>
+                    <br>
+                    <button class="btn btn-success">Atualizar</button>
+                </form>
+            </div>
         </div>
-        <div class="card-body">
-            <form method="POST" action="/articles/update">
-                <input type="hidden" value="<%= article.id %>" name="id">
-                <input class="form-control" type="text" name="title" placeholder="Defina o título do artigo" value="<%= article.title %>"><br>
-                <textarea class="form-control" placeholder="Escreva o artigo aqui!" name="body" id="article"></textarea><br>
-                <label>Categoria</label>
-                <select name="category" class="form-control">
-                    <% categories.forEach((category) => { %>
-                        <% if(category.id == article.categoryId) { %> 
-                            <option value="<%= category.id %>" selected><%= category.title %></option>
-                        <% } else { %>
-                            <option value="<%= category.id %>"><%= category.title %></option>
-                        <% } %>   
-                    <% }) %>
-                </select>
-                <br>
-                <button class="btn btn-success">Atualizar</button>
-            </form>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+</body>
+<%- include('../../partials/footer.ejs')%>
 
-<div id="content" style="display: none;">
-    <%- article.body %>
-</div>
-
-
-
-<%- include ../../partials/footer.ejs %>
+<!--Configurando TinyMce para nelhorar a textArea -->
 
 <script src="/tinymce/tinymce.min.js"></script>
 <script>

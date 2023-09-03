@@ -30,12 +30,16 @@ connection
     })
 
 app.get("/", (req,res)=>{
-    Article.findAll().then(article=>{
-        res.render('index',{
-            article:article
+    Article.findAll({
+        order:[['id','DESC']]
+    }).then(article=>{
+        Category.findAll().then(categories=>{
+            res.render('index',{
+                article:article,
+                categories:categories
+            })
         })
     })
-
 })
 
 app.get("/:slug", (req,res)=>{
@@ -46,7 +50,12 @@ app.get("/:slug", (req,res)=>{
         }
     }).then(article =>{
         if(!undefined){
-            res.render('admin/articles/pageArticle',{article:article})
+            Category.findAll().then(categories=>{
+                res.render('admin/articles/pageArticle',{
+                    article:article,
+                    categories:categories
+                })
+            })
         }else{
             res.redirect('/')
         }

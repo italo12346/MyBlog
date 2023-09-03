@@ -41,13 +41,12 @@ router.get('/admin/article',(req, res)=>{
 })
 
 //Update
-router.get('/admin/article/edit/:id',(req, res)=>{
-    let id = req.params.id
+router.get('/admin/article/edit/:id', (req, res) => {
+    var id = req.params.id;
     Article.findByPk(id).then(article => {
         if(article != undefined){
             Category.findAll().then(categories => {
-                res.render("admin/articles/edit", {categories: categories, article: article})
-
+                res.render("admin/articles/editArticle", {categories: categories, article: article})
             });
         }else{
             res.redirect("/");
@@ -55,6 +54,23 @@ router.get('/admin/article/edit/:id',(req, res)=>{
     }).catch(err => {
         res.redirect("/");
     });
+});
+
+router.post('/admin/article/update',(req, res)=>{
+    let id = req.body.id
+    let title = req.body.title
+    let summary = req.body.summary
+    let body = req.body.body
+    let category = req.body.category
+    Article.findByPk(id).then(article=>{
+        article.update({
+            title:title,
+            summary:summary,
+            body:body, 
+            categoryId:category 
+        })
+    })
+    res.redirect("/admin/article")
 })
 
 //Delete

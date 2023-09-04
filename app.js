@@ -7,6 +7,7 @@ const bodyParser = require("body-parser")
 const connection = require("./database/connection")
 const Article = require("./model/Article")
 const Category = require("./model/Category")
+const User = require("./model/User")
 
 const articlesController = require("./controller/articlesController")
 const categoriesController = require("./controller/categoriesControler")

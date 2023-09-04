@@ -3,7 +3,7 @@ const  connection = require("../database/connection")
 
 
 const User = connection.define('users',{
-    userName:{
+    email:{
         type: Sequelize.STRING,
         allowNull: false
     },password:{
@@ -12,7 +12,7 @@ const User = connection.define('users',{
     }
 })
 
-//Category.sync({force: true}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
+//User.sync({force: true}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
 
 
 module.exports = User;

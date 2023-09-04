@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --cor-navbar:#000059;
+    --cor-navbar:#083263;
     --cor-hover: rgb(255, 0, 0);
-    --cor-primary: #191970;
+    --cor-primary: #4c6c81;
     --cor-secondary: rgb(0, 0, 0);
     --cor-text: rgb(255, 255, 255);
     --cor-shadow: rgb(168, 2, 2);
@@ -31,7 +31,7 @@ button{
 }
 
 .navbar{
-    background-color: var(--cor-navbar);
+    background-image: linear-gradient(to right, var(--cor-navbar),var(--cor-primary));
     text-decoration: none;
 }
 .navbar-brand{
@@ -42,8 +42,8 @@ footer {
     display: flex;
     width: 100vw;
     height: 5vh;
-    color: #ffff;
-    background-color: var(--cor-primary);
+    color: var(--cor-text);
+    background-image: linear-gradient(to right, var(--cor-navbar),var(--cor-primary));
     justify-content: center;
     align-items: center;
     margin-top: 100vh;
@@ -120,11 +120,10 @@ footer {
 }
 .card{
     text-align: center;
-    width: 40vw;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .card-header{
-    background-color: var(--cor-navbar);
+    background-image: linear-gradient(to right, var(--cor-navbar),var(--cor-primary));
     color: #ffff;
 }
 .fild{

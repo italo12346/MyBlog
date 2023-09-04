@@ -55,7 +55,7 @@ router.get('/admin/category', (req, res) => {
 })
 
 // Create
-router.post('/admin/category/save', (req, res) => {
+router.post('/admin/category/create', (req, res) => {
     let title = req.body.title;
     if (title == undefined) {
         res.redirect('/')

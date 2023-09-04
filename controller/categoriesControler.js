@@ -4,7 +4,7 @@ const slugify = require("slugify")
 const Category = require("../model/Category")
 const Article = require("../model/Article")
 
-router.get("/:slug",(req, res) => {
+router.get("/category/:slug",(req, res) => {
     var slug = req.params.slug;
     Category.findOne({
         where: {

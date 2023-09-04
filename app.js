@@ -31,7 +31,8 @@ connection
 
 app.get("/", (req,res)=>{
     Article.findAll({
-        order:[['id','DESC']]
+        order:[['id','DESC']],
+        limit:4
     }).then(article=>{
         Category.findAll().then(categories=>{
             res.render('index',{

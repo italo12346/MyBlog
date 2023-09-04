@@ -1,14 +1,14 @@
-<%- include('partials/header.ejs')%>
+<%- include('../../partials/header.ejs')%>
 
 <body>
-  <%- include('partials/navbarHome.ejs')%>
+  <%- include('../../partials/navbarHome.ejs')%>
   <div class="container">
     <h1>Bem vindo ao MyBlog</h1>
     <hr>
     <div class="newBtn">
       <a href="/admin/article/new" class="btn btn-success" title="Criar novo Artigo">+</a>
     </div>
-    <% article.forEach((article)=>{ %>
+    <% result.articles.rows.forEach((article)=>{ %>
     <div class="card">
       <div class="card-header">
         <h2><%-article.title %></h2>
@@ -22,9 +22,17 @@
     </div>
     <%})%>
     <div class="next">
-        <a href="/article/page/2">Next >>></a>
+      <% if(result.next){%>
+      <a href="/article/page/<%-result.page + 1%>">Next >>></a>
+      <%}%>
     </div>
+    <div class="preview">
+    <% if(result.page <=2){%>
+      <a href="/"><<< Prev</a>
+          <%}else{%>
+          <a href="/article/page/<%-result.page -1 %>"><<< Prev </a>
+              <%}%>
+      </div>
   </div>
-
 </body>
-<%- include('partials/footer.ejs') %>
+<%- include('../../partials/footer.ejs') %>

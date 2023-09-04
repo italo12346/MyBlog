@@ -19,7 +19,7 @@
     list-style: none;
     font-family: 'Poppins';
 }
-
+/* Pagina */
 button{
     border: none;
 }
@@ -37,6 +37,21 @@ button{
 .navbar-brand{
     margin-left: 0.8vw;
 }
+
+footer {
+    display: flex;
+    width: 100vw;
+    height: 5vh;
+    color: #ffff;
+    background-color: var(--cor-primary);
+    justify-content: center;
+    align-items: center;
+    margin-top: 100vh;
+ }
+
+ footer p{
+    opacity: 0.5;
+ }
 /* Cards */
 
 .card{
@@ -72,4 +87,26 @@ button{
 .icons{
     height: 2vh;
     cursor: pointer;
+}
+.next{
+    float: right;
+}
+.preview{
+    float: left;
+}
+
+.next a,.preview a{
+    background-color:#198754;
+    text-decoration: none;
+    color: #ffff;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    transition: ease 0.1s;
+
+}
+.next a:hover ,.preview a:hover {
+    background-color: #146c43;
+}
+.next ,.preview {
+    margin-top: 1vh;
 }

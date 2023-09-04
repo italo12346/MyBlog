@@ -14,6 +14,42 @@ router.get('/admin/article/new',(req, res)=>{
     })
 })
 
+// Pagination
+router.get('/article/page/:num',(req, res)=>{
+    let page = req.params.num
+    let offset = 0
+    
+    if(isNaN(page) || page == 1){
+        offset = 0;
+    }else{
+        offset = (parseInt(page) - 1) * 4;
+    }
+
+    Article.findAndCountAll({
+        limit: 4,
+        offset: offset,
+        order:[
+           [ 'id','DESC']
+        ]
+    }).then(articles => {
+        var next;
+        if(offset + 4 >= articles.count){
+            next = false;
+        }else{
+            next = true;
+        }
+
+        var result = {
+            page: parseInt(page),
+            next: next,
+            articles : articles
+        }
+
+        Category.findAll().then(categories => {
+            res.render("admin/articles/page",{result: result, categories: categories})
+        });
+    })
+})
 //create
 router.post('/admin/article/save',(req, res)=>{
     let title = req.body.title
@@ -55,7 +91,7 @@ router.get('/admin/article/edit/:id', (req, res) => {
         res.redirect("/");
     });
 });
-
+// Update
 router.post('/admin/article/update',(req, res)=>{
     let id = req.body.id
     let title = req.body.title
@@ -69,6 +105,8 @@ router.post('/admin/article/update',(req, res)=>{
             body:body, 
             categoryId:category 
         })
+    }).catch(err=>{
+        res.redirect("/")
     })
     res.redirect("/admin/article")
 })

@@ -24,13 +24,13 @@
             <th><%-categories.slug %></th>
             <th>
                 <a href="/admin/category/edit/<%-categories.id %>">
-                  <img class="icons" src="/img/editdocument_105148.svg" alt="Editar">
+                  <img class="icons" src="/img/editdocument_105148.svg" alt="Editar" title="Editar">
                 </a>
               <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmAction(event)">
                 <input type="hidden" name="id" value="<%- categories.id %>">
 
                 <button>
-                  <img class="icons" src="/img/delete_remove_bin_icon-icons.com_72400.svg" alt="Deletar">
+                  <img class="icons" src="/img/delete_remove_bin_icon-icons.com_72400.svg" alt="Deletar" title="Deletar">
                 </button>
               </form>
             </th>

@@ -110,3 +110,23 @@ footer {
 .next ,.preview {
     margin-top: 1vh;
 }
+/* login */
+
+.login{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    text-align: center;
+    width: 40vw;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.card-header{
+    background-color: var(--cor-navbar);
+    color: #ffff;
+}
+.fild{
+    text-align: center;
+}

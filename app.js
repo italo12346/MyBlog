@@ -10,6 +10,7 @@ const Category = require("./model/Category")
 
 const articlesController = require("./controller/articlesController")
 const categoriesController = require("./controller/categoriesControler")
+const userController = require("./controller/userController")
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
@@ -19,6 +20,7 @@ app.use(bodyParser.json())
 
 app.use("/",categoriesController);    
 app.use("/",articlesController);
+app.use("/",userController);
 
 // Database
 connection
@@ -43,7 +45,7 @@ app.get("/", (req,res)=>{
     })
 })
 
-app.get("/:slug", (req,res)=>{
+app.get("/article/:slug", (req,res)=>{
     let slug = req.params.slug
     Article.findOne({
         where:{

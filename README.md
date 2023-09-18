@@ -15,7 +15,6 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 
 flush privileges;
 ```
-* ***OBS: as variáveis USER, EMAIL e PASSWORD servem para definir um adm ao gerar o banco pela primeira vez.***
 ---
 **3.** Gerar tabelas do banco de dados :
 Acesse a pasta models entre em cada model e desfaça a linha que esta comentada

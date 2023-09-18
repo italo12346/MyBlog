@@ -1,25 +1,25 @@
 <%- include('../../partials/header.ejs')%>
 
 <body>
-  <div class="page">
-    <%- include('../../partials/navbarAdmin.ejs')%>
-
-    <div class="container">
-      <div class="card">
+  <%- include('../../partials/navbarHome.ejs')%>
+  <div class="container">
+    <div class="page">
+      <div class="card ">
         <div class="card-header">
           <h2>Bem vindo a criação de artigos</h2>
           <hr>
         </div>
         <div class="card-body">
           <form action="/admin/article/save" method="post" onsubmit="confirmAction(event)">
-            <input class="title form-control" type="text" name="title"  minlength="3" maxlength="60" placeholder="Definir Titulo">
+            <input class="title form-control" type="text" name="title" minlength="3" maxlength="60" placeholder="Definir Titulo">
             <input class="summary form-control" type="text" name="summary" minlength="3" maxlength="140" placeholder="Faça um breve resumo sobre o artigo">
-            <textarea class="form-control" name="body" id="article" cols="30" rows="25" placeholder="Escreva seu artigo"></textarea>
+            <textarea class="form-control" name="body" id="article" cols="10" rows="15" placeholder="Escreva seu artigo"></textarea>
             <label>Categorias</label>
             <div class="buttons">
               <select class="select-category" name="category">
+                <option value="" selected>Selecione uma categoria</option>
                 <% categories.forEach((categories)=>{%>
-                <option value="<%-categories.id %>"><%-categories.title %></option>
+                     <option value="<%-categories.id %>"><%-categories.title %></option>
                 <%})%>
               </select>
               <input class="btn btn-success" type="submit" value="Criar">

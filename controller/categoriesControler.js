@@ -13,8 +13,8 @@ router.get("/category/:slug",(req, res) => {
         include: [{model: Article}]
     }).then( category => {
         if(category != undefined){
-            Category.findAll().then(categories => {
-                res.render("index",{article: category.articles,categories: categories});
+            Category.findAll( ).then(categories => {           
+                res.render("admin/categories/categoryArticle",{article: category.articles,categories: categories});
             });
         }else{
             res.redirect("/");

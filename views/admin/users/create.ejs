@@ -3,21 +3,25 @@
 
 
 <div class="container">
-    <hr> 
+  <div class="page">
+    <hr>
+
     <div class="card mt-5">
-        <div class="card-header">
-            <h2>Criação de usuário</h2>
-        </div>
-        <div class="card-body">
-            <form action="/admin/user/create" method="POST">
-                <input class="fild form-control" name="email" type="email" placeholder="email@exemplo.com"><br>
-                <input class="fild form-control" name="password" type="password" placeholder="******"><br>
-                <label>Confirme sua senha</label>
-                <input class="fild form-control" name="passwordConfirm" type="password" placeholder="******"><br>
-                <button type="submit" class="btn btn-success btn-block">Criar</button>
-            </form>
-        </div>
+      <div class="card-header">
+        <h2>Criação de usuário</h2>
+      </div>
+
+      <div class="card-body">
+        <form action="/admin/users/create" method="POST">
+          <input class="fild form-control" name="email" type="email" placeholder="email@exemplo.com"><br>
+          <input class="fild form-control" name="password" type="password" placeholder="******"><br>
+          <label>Confirme sua senha</label>
+          <input class="fild form-control" name="passwordConfirm" type="password" placeholder="******"><br>
+          <button type="submit" class="btn btn-success w-100">Criar</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 
 

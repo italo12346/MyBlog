@@ -3,27 +3,30 @@
 <body>
   <%- include('partials/navbarHome.ejs')%>
   <div class="container">
-    <h1>Bem vindo ao MyBlog</h1>
-    <hr>
-    <div class="newBtn">
-      <a href="/admin/article/new" class="btn btn-success" title="Criar novo Artigo">+</a>
+        <h1 class="display-5">Bem vindo ao MyBlog</h1>
+      <hr>
+      <div class="newBtn">
+        <a href="/admin/article/new" class="btn btn-success" title="Criar novo Artigo">+</a>
+      </div>
+      <div class="cards">
+        <% article.forEach((article)=>{ %>
+        <div class="card">
+          <div class="card-header">
+            <h2><%-article.title %></h2>
+          </div>
+          <div class="card-body">
+            <strong>Resumo: </strong><%-article.summary %>
+          </div>
+          <div class="card-footer">
+            <a href="/article/<%-article.slug%>" class="btn btn-success"> Ler Artigo</a>
+          </div>
+        </div>
+        <%})%>
     </div>
-    <% article.forEach((article)=>{ %>
-    <div class="card">
-      <div class="card-header">
-        <h2><%-article.title %></h2>
-      </div>
-      <div class="card-body">
-        <strong>Resumo: </strong><%-article.summary %>
-      </div>
-      <div class="card-footer">
-        <a href="/article/<%-article.slug%>" class="btn btn-success"> Ler Artigo</a>
-      </div>
-    </div>
-    <%})%>
     <div class="next">
-        <a href="/article/page/2">Next >>></a>
+      <a href="/article/page/2">Next >>></a>
     </div>
+    
   </div>
 
 </body>

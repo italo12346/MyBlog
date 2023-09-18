@@ -1,9 +1,9 @@
 <%- include('../../partials/header.ejs')%>
 
 <body>
-  <div class="page">
-    <%- include('../../partials/navbarAdmin.ejs')%>
-    <div class="container">
+
+  <%- include('../../partials/navbarAdmin.ejs')%>
+  <div class="container">
       <h2 class="text-center">Categorias</h2>
       <a href="/admin/category/new" class="btn btn-success">Criar nova categoria</a>
       <hr>
@@ -23,9 +23,9 @@
             <th><%-categories.title %></th>
             <th><%-categories.slug %></th>
             <th>
-                <a href="/admin/category/edit/<%-categories.id %>">
-                  <img class="icons" src="/img/editdocument_105148.svg" alt="Editar" title="Editar">
-                </a>
+              <a href="/admin/category/edit/<%-categories.id %>">
+                <img class="icons" src="/img/editdocument_105148.svg" alt="Editar" title="Editar">
+              </a>
               <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmAction(event)">
                 <input type="hidden" name="id" value="<%- categories.id %>">
 

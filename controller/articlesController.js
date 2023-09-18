@@ -3,10 +3,11 @@ const Article = require("../model/Article")
 const Category = require("../model/Category")
 const slugify = require("slugify")
 const router = express.Router() 
+const adminAuth = require("../middlewares/adminAuth")
 
 
 
-router.get('/admin/article/new',(req, res)=>{
+router.get('/article/new',(req, res)=>{
     Category.findAll().then(categories=>{
         res.render('admin/articles/createArticle',{
             categories:categories
@@ -68,7 +69,7 @@ router.post('/admin/article/save',(req, res)=>{
 
 })
 //Read
-router.get('/admin/article',(req, res)=>{
+router.get('/admin/article',adminAuth,(req, res)=>{
     Article.findAll({include:[{model: Category}]}).then(articles=>{
         res.render('admin/articles/article',{
             article:articles

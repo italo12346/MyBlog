@@ -29,10 +29,7 @@ app.use("/",articlesController);
 app.use("/",userController);
 
 // Session
-app.use(session({
-    secret:"asdfghjtres",
-    cookie:{maxAge :300000}
-}))
+
 // Database
 connection
     .authenticate()

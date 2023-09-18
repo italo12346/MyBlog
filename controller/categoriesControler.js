@@ -3,6 +3,7 @@ const router = express.Router()
 const slugify = require("slugify")
 const Category = require("../model/Category")
 const Article = require("../model/Article")
+const adminAuth = require("../middlewares/adminAuth")
 
 router.get("/category/:slug",(req, res) => {
     var slug = req.params.slug;
@@ -24,11 +25,11 @@ router.get("/category/:slug",(req, res) => {
     })
 })
 
-router.get('/admin/category/new', (req, res) => {
+router.get('/admin/category/new',adminAuth, (req, res) => {
     res.render('admin/categories/createCategory')
 })
 
-router.get('/admin/category/edit/:id', (req, res) => {
+router.get('/admin/category/edit/:id',adminAuth, (req, res) => {
     let id = req.params.id
     console.log(id);
     if (isNaN(id)) {
@@ -46,7 +47,7 @@ router.get('/admin/category/edit/:id', (req, res) => {
 })
 
 // Read
-router.get('/admin/category', (req, res) => {
+router.get('/admin/category',adminAuth, (req, res) => {
     Category.findAll().then(categories => {
         res.render('admin/categories/category', {
             categories: categories
@@ -70,7 +71,7 @@ router.post('/admin/category/create', (req, res) => {
     }
 })
 // Update
-router.post('/admin/category/update', (req, res) => {
+router.post('/admin/category/update',adminAuth, (req, res) => {
     let id = req.body.id
     let title = req.body.title
     Category.update({ title: title }, {

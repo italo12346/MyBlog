@@ -9,16 +9,23 @@ npm i
 ```
 ---
 **2.** Caso este erro apareça - ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
-faça - 
+ - Para corrigir, basta utilizar o seguinte comando:
 ```bash
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+Onde você deve substituir o campo "password" pela senha do usuário, no caso estamos utilizando o usuário "root" e o caminho "localhost", porém também devem ser preenchidos de acordo com a configuração que você utiliza em seu banco.
 
+Após isso, deve-se rodar o seguinte comando:
+```bash
 flush privileges;
 ```
+Pronto, caso o erro ocorra novamente, você pode tentar o mesmo processo, sem o campo "localhost" do código.
 ---
-**3.** Gerar tabelas do banco de dados :
-Acesse a pasta models entre em cada model e desfaça a linha que esta comentada
 
+**3.** Gerar tabelas do banco de dados :
+```bash
+Acesse a pasta models entre em cada model e desfaça a linha que esta comentada
+```
 
 **4.** Rodar o servidor em ambiente de desenvolvimento pelo do terminal com o comando:
 ```bash

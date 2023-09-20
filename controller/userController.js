@@ -4,10 +4,11 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const User = require("../model/User")
 const session = require("express-session")
+const loginCheck = require("../middlewares/loginCheck")
 
 
 
-router.get('/login', (req, res) => {
+router.get('/login',loginCheck, (req, res) => {
     res.render('admin/users/login')
 })
 
@@ -72,5 +73,12 @@ router.get('/admin/users', (req, res) => {
 
 router.post('/admin/users/update', (req, res) => {
     res.send("Atualizando usuario")
+})
+
+//Logout
+
+router.get("/logout",(req, res)=>{
+   session.user = undefined
+   res.redirect('/login')
 })
 module.exports = router

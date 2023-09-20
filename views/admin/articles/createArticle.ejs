@@ -38,9 +38,16 @@
 
 <script>
   tinymce.init({
+    
     language: "pt_BR",
     selector: "#article",
+    toolbar: 'image',
+    images_upload_url: '/upload',  // Rota para lidar com uploads de imagem
+    images_upload_base_path: '/images',
+    images_upload_max_size: 1024 * 1024,
     plugins: [
+    'responsivefilemanager',
+    'personalize_form',
       'advlist',
       'autolink',
       'link',

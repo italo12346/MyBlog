@@ -4,6 +4,7 @@ const slugify = require("slugify")
 const Category = require("../model/Category")
 const Article = require("../model/Article")
 const adminAuth = require("../middlewares/adminAuth")
+const session = require("express-session")
 
 router.get("/category/:slug",(req, res) => {
     var slug = req.params.slug;
@@ -15,7 +16,11 @@ router.get("/category/:slug",(req, res) => {
     }).then( category => {
         if(category != undefined){
             Category.findAll( ).then(categories => {           
-                res.render("admin/categories/categoryArticle",{article: category.articles,categories: categories});
+                res.render("admin/categories/categoryArticle",{
+                    article: category.articles,
+                    categories: categories,
+                    session:session
+                });
             });
         }else{
             res.redirect("/");
@@ -38,7 +43,8 @@ router.get('/admin/category/edit/:id',adminAuth, (req, res) => {
     Category.findByPk(id).then(categories => {
         if (categories != undefined) {
             res.render('admin/categories/editCategory', {
-                categories: categories
+                categories: categories,
+                session:session
             })
         } else {
             res.redirect('/admin/category')
@@ -50,13 +56,14 @@ router.get('/admin/category/edit/:id',adminAuth, (req, res) => {
 router.get('/admin/category',adminAuth, (req, res) => {
     Category.findAll().then(categories => {
         res.render('admin/categories/category', {
-            categories: categories
+            categories: categories,
+            session:session
         })
     })
 })
 
 // Create
-router.post('/admin/category/create', (req, res) => {
+router.post('/admin/category/create',adminAuth, (req, res) => {
     let title = req.body.title;
     if (title == undefined) {
         res.redirect('/')
@@ -84,7 +91,7 @@ router.post('/admin/category/update',adminAuth, (req, res) => {
 })
 
 // Delete
-router.post('/admin/category/delete', (req, res) => {
+router.post('/admin/category/delete',adminAuth, (req, res) => {
     let id = req.body.id
     if (id != undefined) {
         if (!isNaN(id)) {

@@ -29,7 +29,11 @@ app.use("/",articlesController);
 app.use("/",userController);
 
 // Session
-
+app.use(session({
+    secret:"segredo",
+    cookie:{maxAge: 3600000 }
+}))
+console.log(session.user);
 // Database
 connection
     .authenticate()
@@ -38,7 +42,6 @@ connection
     }).catch((error) => {
         console.log(error);
     })
-
 app.get("/", (req,res)=>{
     Article.findAll({
         order:[['id','DESC']],
@@ -47,7 +50,8 @@ app.get("/", (req,res)=>{
         Category.findAll().then(categories=>{
             res.render('index',{
                 article:article,
-                categories:categories
+                categories:categories,
+                session:session
             })
         })
     })
@@ -64,7 +68,8 @@ app.get("/article/:slug", (req,res)=>{
             Category.findAll().then(categories=>{
                 res.render('admin/articles/pageArticle',{
                     article:article,
-                    categories:categories
+                    categories:categories,
+                    session:session
                 })
             })
         }else{

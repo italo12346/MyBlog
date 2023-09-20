@@ -21,7 +21,14 @@
                       </li>
                       <%})%>
                     </ul>
-                    <a href="/login" class="navbar-brand " title="Login">Login</a>
+                    
+                    <%if(session.user == undefined){%>                      
+                      <a href="/login" class="navbar-brand " title="Login">Login</a>
+                    <%}else{%>
+
+                      <a href="/admin/article" class="navbar-brand " title="Admin">Admin</a>
+                      <a href="/Logout" class="navbar-brand " title="Logout">Logout</a>
+                    <%}%>
             </nav>   
         </div>
     </div> 

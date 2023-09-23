@@ -60,7 +60,7 @@ app.get("/", (req, res) => {
             res.render('index', {
                 article: article,
                 categories: categories,
-                session: req.session // Corrigido para req.session
+                session: session // Corrigido para req.session
             });
         });
     });
@@ -78,7 +78,7 @@ app.get("/article/:slug", (req, res) => {
                 res.render('admin/articles/pageArticle', {
                     article: article,
                     categories: categories,
-                    session: req.session // Corrigido para req.session
+                    session: session // Corrigido para req.session
                 });
             });
         } else {

@@ -12,7 +12,7 @@ const Category = connection.define('categories',{
     }
 })
 
-//Category.sync({force: true}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
+Category.sync({force: false}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
 
 
 module.exports = Category;

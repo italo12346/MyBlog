@@ -12,7 +12,7 @@ router.get('/login',loginCheck, (req, res) => {
     res.render('admin/users/login')
 })
 
-router.get('/admin/user/new', (req, res) => {
+router.get('/admin/users/new', (req, res) => {
     res.render('admin/users/create')
 })
 
@@ -50,17 +50,17 @@ router.post('/admin/users/create', (req, res) => {
                     email: email,
                     password: hash,
                 }).then(() => {
-                    res.redirect("/admin/user")
+                    res.redirect("/admin/users")
                 }).catch((err) => {
                     console.log(err);
-                    res.redirect('/admin/user/new')
+                    res.redirect('/admin/users/new')
                 })
             } else {
                 res.send("usuario ja existe")
             }
         })
     } else {
-        res.redirect('/admin/user/new')
+        res.redirect('/admin/users/new')
     }
 })
 // Read

@@ -23,6 +23,6 @@ const Article = connection.define('articles',{
 Article.belongsTo(Category) // Um para muitos
 Category.hasMany(Article) // Um para Um
 
-//Article.sync({force: true}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
+Article.sync({force: false}) // Sincronizar, depois que executar o codigo a primeira vez desabilite essa linha 
 
 module.exports = Article;

@@ -59,16 +59,19 @@ router.post('/admin/article/save',adminAuth,(req, res)=>{
     let body = req.body.body
     let summary = req.body.summary
     let categoryId = req.body.category
-    Article.create({
-        title:title,
-        slug: slugify(title),
-        summary:summary,
-        body:body,
-        categoryId:categoryId
-    }).then(()=>{
-        res.redirect('/admin/article')
-    })
-
+    if (title != undefined || body != undefined) {
+        Article.create({
+            title:title,
+            slug: slugify(title),
+            summary:summary,
+            body:body,
+            categoryId:categoryId
+        }).then(()=>{
+            res.redirect('/admin/article')
+        })
+    }else{
+        res.redirect("/admin/article/new")
+    }
 })
 //Read
 router.get('/admin/article',adminAuth,(req, res)=>{

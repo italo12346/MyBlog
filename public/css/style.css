@@ -26,6 +26,7 @@ button{
 .container{
     position: relative;
     width: 100vw;
+    padding-top: 3vh;
 }
 .page{
     display: flex;
@@ -138,7 +139,7 @@ footer {
 /* login */
 
 .login{
-    height: 40vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -33,13 +33,14 @@ npm run dev
 ## Imgens do Site
 #### segue links as telas mais importantes
 
-https://drive.google.com/file/d/14pzZCpV2BDt5GHnkuo-C73M7IbNZ74r7/view?usp=drive_link,
-https://drive.google.com/file/d/184bkBL3My5dy6VR9qw2VWg4zmb19C--e/view?usp=drive_link,
-https://drive.google.com/file/d/1ErcJy3s5dYWDre2ZrSYo54dEfu84ni29/view?usp=drive_link,
-https://drive.google.com/file/d/1G5TVvGwW7zDfGrncBz6UzCJW5DhxwlEc/view?usp=drive_link, 
-https://drive.google.com/file/d/1JvJKeK4lsRlVMoN2YFx9A45NrnOG4bkB/view?usp=drive_link, 
-https://drive.google.com/file/d/1Qf6QGonPV9NkC7O_hWS8s6D7gARJUWyI/view?usp=drive_link,
-https://drive.google.com/file/d/1YnelrLRAbxEfG90QfYZjFrQcCdai44sN/view?usp=drive_link,
-https://drive.google.com/file/d/1gogXTczUQ8pxz-RTeR1ohvMQlgPnh8WH/view?usp=drive_link,
-https://drive.google.com/file/d/1ioMN0sq0rRwERJtcSo1DT89wImWfaCwc/view?usp=drive_link, 
-https://drive.google.com/file/d/1olCJJUAM1ZN78Bg1fefWKGokRlaMtQYW/view?usp=drive_link
+**TelaHome**: https://drive.google.com/file/d/1ErcJy3s5dYWDre2ZrSYo54dEfu84ni29/view?usp=drive_link <br>
+**Login**: https://drive.google.com/file/d/1YnelrLRAbxEfG90QfYZjFrQcCdai44sN/view?usp=drive_link,<br>
+**HomePosLogin**https://drive.google.com/file/d/1olCJJUAM1ZN78Bg1fefWKGokRlaMtQYW/view?usp=drive_link<br>
+**TelaArtigo**: https://drive.google.com/file/d/1JvJKeK4lsRlVMoN2YFx9A45NrnOG4bkB/view?usp=drive_link, <br>
+**Categoria**: https://drive.google.com/file/d/14pzZCpV2BDt5GHnkuo-C73M7IbNZ74r7/view?usp=drive_link,<br>
+**TelaArtigosAdmin**: https://drive.google.com/file/d/184bkBL3My5dy6VR9qw2VWg4zmb19C--e/view?usp=drive_link,<br>
+**EdiçãoArtigos**: https://drive.google.com/file/d/1G5TVvGwW7zDfGrncBz6UzCJW5DhxwlEc/view?usp=drive_link, <br>
+**CadastroUsuario**: https://drive.google.com/file/d/1Qf6QGonPV9NkC7O_hWS8s6D7gARJUWyI/view?usp=drive_link,<br>
+**CadastroCategoria**: https://drive.google.com/file/d/1gogXTczUQ8pxz-RTeR1ohvMQlgPnh8WH/view?usp=drive_link,<br>
+**Delete**: https://drive.google.com/file/d/1ioMN0sq0rRwERJtcSo1DT89wImWfaCwc/view?usp=drive_link, <br>
+

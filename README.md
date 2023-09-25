@@ -1,7 +1,9 @@
 # MyBlog
 Um blog com usuarios e com editor de texto embutido
 
-#### Requisitos: Node, NPM n MySql.
+## Requisitos: Node, NPM n MySql.
+### Importante: ter o Mysql rodando localmente na sua maquina
+
 ---
 **1.** Instalar as depedências do projeto pelo do terminal com o comando:
 ```bash

@@ -30,6 +30,8 @@ npm run dev
 ```
 ---
 **5.** Abrir o link [http://localhost:3000](http://localhost:3000) com seu navegador.
+
+**6.** Crie um usuario e uma categorias, esta pronto para usar 
 ## Imgens do Site
 #### segue links as telas mais importantes
 

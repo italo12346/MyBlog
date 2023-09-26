@@ -42,7 +42,7 @@ router.post('/admin/users/create', (req, res) => {
     let password = req.body.password
     let passwordConfirm = req.body.passwordConfirm
     if (password == passwordConfirm) {
-        let salt = bcrypt.genSaltSync(10)
+        let salt = bcrypt.genSaltSync(10) 
         let hash = bcrypt.hashSync(password, salt)
         User.findOne({ where: { email: email } }).then(user => {
             if (user == undefined) {

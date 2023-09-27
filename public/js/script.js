@@ -2,7 +2,6 @@
 function confirmAction(event) {
     event.preventDefault();
     let decision = confirm("Deseja continuar ?")
-    console.log(decision);
     if (decision == true) {
         event.target.submit()
     }
@@ -11,7 +10,7 @@ function confirmAction(event) {
 
 function confirmArticle(event) {
     event.preventDefault();
-    let decision = confirm("Artigo criado com sucesso! \n deseja continuar ?")
+    let decision = confirm("criado com sucesso! \n deseja continuar ?")
     if (decision == true) {
         event.target.submit()
     }

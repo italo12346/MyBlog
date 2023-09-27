@@ -48,7 +48,7 @@ router.get('/article/page/:num', async (req, res) => {
 
         const categories = await Category.findAll();
 
-        res.render("admin/articles/page", { result, categories });
+        res.render("admin/articles/page", { result, categories, session});
     } catch (error) {
         console.error(error);
         res.status(500).send("Erro ao carregar artigos");
